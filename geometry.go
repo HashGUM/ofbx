@@ -306,6 +306,9 @@ func parseGeometry(scene *Scene, element *Element) (*Geometry, error) {
 			for poly := 0; poly < len(tmp); poly++ {
 				triCt, tmpI = getTriCountFromPoly(origIndices, tmpI)
 				for i := 0; i < triCt; i++ {
+					if insertIdx >= len(geom.Materials) {
+						continue
+					}
 					geom.Materials[insertIdx] = tmp[poly]
 					insertIdx++
 				}

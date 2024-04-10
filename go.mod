@@ -1,4 +1,4 @@
-module github.com/flywave/ofbx
+module github.com/HashGUM/ofbx
 
 go 1.13
 

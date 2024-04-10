@@ -40,7 +40,11 @@ func splatVec2(mapping VertexDataMapping, data []floatgeom.Point2, indices []int
 			out = make([]floatgeom.Point2, len(indices))
 			for i := 0; i < len(indices); i++ {
 				if indices[i] < len(data) {
-					out[i] = data[indices[i]]
+					if indices[i] < 0 {
+						out[i] = floatgeom.Point2{}
+					} else {
+						out[i] = data[indices[i]]
+					}
 				} else {
 					out[i] = floatgeom.Point2{}
 				}

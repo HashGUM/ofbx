@@ -538,7 +538,7 @@ func parseConnection(root *Element, scene *Scene) (bool, error) {
 
 func parseTakes(scene *Scene) (bool, error) {
 	takes := findChildren(scene.RootElement, "Takes")
-	if takes == nil {
+	if takes == nil || len(takes) == 0 {
 		return true, nil
 	}
 
